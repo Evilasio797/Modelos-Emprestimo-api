@@ -1,0 +1,84 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand">Modalidades de Emprestimo App</a>
+  </nav>
+
+  <div class="container mt-4">
+    <h3>Modalidades</h3>
+    <hr />
+    <form [formGroup]="form" (ngSubmit)="submit()"><!--esse form referencia o form do component.ts no metodo submit-->
+      <div class="row">
+          <div class="col-md-6"><!--aqui, passa uma linha de 12 posições e vou usar metade (6)-->
+              <input type="text" class="form-control" formControlName="cliente"/>
+          </div>
+          <div class="col-md-1">
+              <button type="submit" [disabled]="!form.valid"
+                class="btn btn-primary">Adicionar
+              </button>
+
+          </div>
+      </div>
+    </form>
+    <hr />
+    <div class="row">
+      <div class="col-md-7">
+        <ul class="list-group">
+          <li *ngFor="let modalidades of modalidades" class="list-group-item">
+            {{modalidades.cliente}}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+ 
+  </div>
+  <div class="container mt-4">
+    <h3>CPF</h3>
+    <form [formGroup]="form2" (ngSubmit)="submit()">
+      <div class="row">
+        <div class="col-md-6"> 
+            <input type="text" class="form-control" formControlName="CPF"/>
+        </div>
+        <div class="col-md-1">
+            <button type="submit" [disabled]="!form.valid" class="btn btn-primary">Adicionar</button>
+
+        </div>
+    </div>
+  </form>
+  <div class="container mt-4">
+    <h3>idade</h3>
+    <form [formGroup]="form3" (ngSubmit)="submit()">
+      <div class="row">
+        <div class="col-md-6"> 
+            <input type="text" class="form-control" formControlName="idade"/>
+        </div>
+        <div class="col-md-1">
+            <button type="submit" [disabled]="!form.valid" class="btn btn-primary">Adicionar</button>
+
+        </div>
+    </div>
+    <div class="container mt-4">
+      <h3>uf</h3>
+      <form [formGroup]="form4" (ngSubmit)="submit()">
+        <div class="row">
+          <div class="col-md-6"> 
+              <input type="text" class="form-control" formControlName="uf"/>
+          </div>
+          <div class="col-md-1">
+              <button type="submit" [disabled]="!form.valid" class="btn btn-primary">Adicionar</button>
+  
+          </div>
+      </div>
+      <div class="container mt-4">
+        <h3>salario</h3>
+        <form [formGroup]="form5" (ngSubmit)="submit()">
+          <div class="row">
+            <div class="col-md-6"> 
+                <input type="text" class="form-control" formControlName="salario"/>
+            </div>
+            <div class="col-md-1">
+                <button type="submit" [disabled]="!form.valid" class="btn btn-primary">Adicionar</button>
+    
+            </div>
+        </div>
+  </form>
+  </div>
